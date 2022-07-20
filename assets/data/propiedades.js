@@ -39,7 +39,7 @@ export const propiedades = [
     descripcion: "Desde las alturas todo se ve mejor",
     src: "../assets/img/depto4.jpg",
     habitaciones: 1,
-    metros: 35,
+    metros: 36,
   },
   {
     tipo: "Casa",
