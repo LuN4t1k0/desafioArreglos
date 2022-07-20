@@ -1,5 +1,4 @@
-
-//#region Arreglo 
+//#region Arreglo
 const propiedades = [
   {
     tipo: "Departamento",
@@ -63,15 +62,38 @@ const propiedades = [
 //#endregion
 
 //variables
-let result = document.querySelector('.container-result')
-let html = ''
+let result = document.querySelector(".container-result");
+// let html = "";
 
 //template
-for (const propiedad of propiedades) {
-  propiedad.metros >35 && propiedad.metros < 120
-    ?  html += /*html*/ `
-  <div class="card" style="width: 18rem;">
-  <img src="${propiedad.src}" class="card-img-top" alt="...">
+
+// for (const propiedad of propiedades) {
+//   if (propiedad.metros >= 35 && propiedad.metros <=70) {
+//     html += /*html*/ `
+//     <div class="card" style="width: 18rem;">
+//   <img src="${propiedad.src}" class="card-img-top" alt="imagen propiedad">
+//   <div class="card-body">
+//     <h5 class="card-title">${propiedad.tipo}</h5>
+//     <h6 class="card-subtitle mb-2 text-muted">Nº Habitaciones: ${propiedad.habitaciones}</h6>
+//     <h6 class="card-subtitle mb-2 text-muted">Metros:${propiedad.metros} M<span>&#178;</span></h6>
+//     <p class="card-text">${propiedad.descripcion}.</p>
+//     <a href="#" class="btn btn-primary">Ver más</a>
+//   </div>
+// </div> 
+//     `;
+//   }
+// }
+
+const buscarPropiedadPorMetroCuadrado = () =>{
+  let minText = document.querySelector('.min').value
+  let maxText = document.querySelector('.max').value
+  let html = ''
+
+  for (const propiedad of propiedades) {
+    if(propiedad.metros >= minText && propiedad.metros <=maxText){
+      html += /*html*/ `
+    <div class="card" style="width: 18rem;">
+  <img src="${propiedad.src}" class="card-img-top" alt="imagen propiedad">
   <div class="card-body">
     <h5 class="card-title">${propiedad.tipo}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Nº Habitaciones: ${propiedad.habitaciones}</h6>
@@ -79,9 +101,12 @@ for (const propiedad of propiedades) {
     <p class="card-text">${propiedad.descripcion}.</p>
     <a href="#" class="btn btn-primary">Ver más</a>
   </div>
-</div> ` 
-
-    : console.log("no pasa na");
+</div> 
+    `
+    }
+  }
+  result.innerHTML = html
+  
 }
 
-result.innerHTML = html;
+// result.innerHTML = html;
