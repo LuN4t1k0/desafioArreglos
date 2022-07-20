@@ -63,35 +63,36 @@ const propiedades = [
 
 //variables
 let result = document.querySelector(".container-result");
-// let html = "";
 
-//template
+const cargaDatosPropiedades = () => {
+  let html = ""
+  let cantidad = ""
+  for (const propiedad of propiedades) {
+    cantidad++, html+=/*html*/`<div class="card" style="width: 18rem;">
+    <img src="${propiedad.src}" class="card-img-top" alt="imagen propiedad">
+    <div class="card-body">
+      <h5 class="card-title">${propiedad.tipo}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Nº Habitaciones: ${propiedad.habitaciones}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Metros:${propiedad.metros} M<span>&#178;</span></h6>
+      <p class="card-text">${propiedad.descripcion}.</p>
+      <a href="#" class="btn btn-primary">Ver más</a>
+    </div>
+  </div>`
+    
+  }
+  result.innerHTML = html
+  console.log(cantidad);
+}
 
-// for (const propiedad of propiedades) {
-//   if (propiedad.metros >= 35 && propiedad.metros <=70) {
-//     html += /*html*/ `
-//     <div class="card" style="width: 18rem;">
-//   <img src="${propiedad.src}" class="card-img-top" alt="imagen propiedad">
-//   <div class="card-body">
-//     <h5 class="card-title">${propiedad.tipo}</h5>
-//     <h6 class="card-subtitle mb-2 text-muted">Nº Habitaciones: ${propiedad.habitaciones}</h6>
-//     <h6 class="card-subtitle mb-2 text-muted">Metros:${propiedad.metros} M<span>&#178;</span></h6>
-//     <p class="card-text">${propiedad.descripcion}.</p>
-//     <a href="#" class="btn btn-primary">Ver más</a>
-//   </div>
-// </div> 
-//     `;
-//   }
-// }
-
-const buscarPropiedadPorMetroCuadrado = () =>{
-  let minText = document.querySelector('.min').value
-  let maxText = document.querySelector('.max').value
-  let html = ''
+const buscarPropiedadPorMetroCuadrado = () => {
+  let minText = document.querySelector(".min").value;
+  let maxText = document.querySelector(".max").value;
+  let html = "";
+  let cantidad = ""
 
   for (const propiedad of propiedades) {
-    if(propiedad.metros >= minText && propiedad.metros <=maxText){
-      html += /*html*/ `
+    if (propiedad.metros >= minText && propiedad.metros <= maxText) {
+      cantidad++, html += /*html*/ `
     <div class="card" style="width: 18rem;">
   <img src="${propiedad.src}" class="card-img-top" alt="imagen propiedad">
   <div class="card-body">
@@ -102,11 +103,13 @@ const buscarPropiedadPorMetroCuadrado = () =>{
     <a href="#" class="btn btn-primary">Ver más</a>
   </div>
 </div> 
-    `
+
+    `;
     }
   }
-  result.innerHTML = html
-  
-}
+  result.innerHTML = html;
+  console.log(cantidad);
+};
 
-// result.innerHTML = html;
+
+document.addEventListener("DOMContentLoaded", cargaDatosPropiedades)
