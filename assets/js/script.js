@@ -75,8 +75,7 @@ const propiedadesJSON = [
 
 //variables
 let result = document.querySelector(".realState-card");
-let contador = document.querySelector(".contador");
-
+let contador = document.querySelector(".contador")
 
 const template = (prop) => {
   console.log(prop);
@@ -94,15 +93,16 @@ const template = (prop) => {
   `;
 };
 
+
 const cargaDatosPropiedades = () => {
   let cantidad = "";
   for (const propiedad of propiedadesJSON) {
     let html = template(propiedad);
-    cantidad++;
+    cantidad ++
     result.innerHTML += html;
   }
   console.log(cantidad);
-  contador.innerHTML = cantidad;
+  contador.innerHTML = cantidad
 };
 
 const buscarPropiedadPorMetroCuadrado = () => {
@@ -110,28 +110,31 @@ const buscarPropiedadPorMetroCuadrado = () => {
   let maxText = document.querySelector(".max").value;
   let rooms = document.querySelector(".rooms").value;
   let html = "";
-  cantidad = 0;
+  cantidad = 0
 
-  if (minText == 0 || maxText == 0 || rooms == 0) {
-    alert("Debes ingresar todos los valores");
+  if(minText == 0 || maxText == 0 || rooms == 0) {
+    alert("Debes ingresar todos los valores")
   }
 
-  let filtro = propiedadesJSON.filter(
-    (p) => p.m >= minText && p.m <= maxText && p.rooms >= rooms
+  let filtro = propiedadesJSON.filter((p) => p.m >= minText && p.m <= maxText && p.rooms >= rooms
   );
 
-  if (filtro.length == 0) {
-    html += `<h1>Busqueda sin resultados</h1>`;
+  if(filtro.length==0){
+    html+= `<h1>Busqueda sin resultados</h1>`
   }
 
   //limpiar pantalla
   result.innerHTML = "";
   for (const f of filtro) {
     html += template(f);
-    cantidad++;
+    cantidad++
   }
   result.innerHTML = html;
-  contador.innerHTML = cantidad;
+  contador.innerHTML = cantidad
 };
 
 document.addEventListener("DOMContentLoaded", cargaDatosPropiedades);
+
+
+
+
