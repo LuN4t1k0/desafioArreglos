@@ -87,9 +87,8 @@ const buscarPropiedadPorMetroCuadrado = () => {
   let html = "";
   cantidad = 0
 
-  if(minText == 0 && maxText == 0 && rooms == 0) {
+  if(minText == 0 || maxText == 0 || rooms == 0) {
     alert("Debes ingresar todos los valores")
-    return
   }
 
   let filtro = propiedadesJSON.filter((p) => p.m >= minText && p.m <= maxText && p.rooms >= rooms
