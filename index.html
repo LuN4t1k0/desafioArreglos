@@ -12,54 +12,32 @@
 </head>
 
 <body>
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Nº Habitaciones" aria-label="Search">
-            <input class="form-control me-2" type="search" placeholder="Min" aria-label="Search">
-            <input class="form-control me-2" type="search" placeholder="Max" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
-        </div>
-      </nav>
-
-      <section class="container">
-        <div class="container-header"> <h1>texto</h1></div>
-      </section>
-
-    <!-- <nav>
-        <section>
-            <div>
-                <p>Cantidad de cuartos:</p>
-                <input min="0" class="form-control w-50 m-auto rooms" type="number" />
-            </div>
-            <div>
-                <span>Metros cuadrados </span>
-                <div class="d-flex">
-                    <div class="me-4">
-                        <p>desde:</p>
-                        <input min="0" class="form-control min" type="number" />
-                    </div>
-                    <div>
-                        <p>hasta:</p>
-                        <input min="0" class="form-control max" type="number" />
-                    </div>
+    <section class="container">
+        <div class="container-search">
+            
+            <nav class="search">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="number" placeholder="Min" />
+                        <input class="form-control me-2" type="number" placeholder="Max" />
+                        <input class="form-control me-2" type="number" placeholder="Rooms" />
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </form>
                 </div>
+            </nav>
+            <div class="search-contador"><h5>Resultados</h5><h5 class="contador"></h5></div>
+        </div>
+        <div class="container_realState">
+            <div class="realState-card">
+
             </div>
-        </section>
-
-        <button class="btn btn-warning" onclick="buscarPropiedadPorMetroCuadrado()">
-            Buscar
-        </button>
-    </nav>
-
-    <section id="Propiedades">
-        <h4 class="py-3">Total: <span class="contador">0</span></h4>
-
-        <div class="propiedades"></div>
-    </section> -->
+        </div>
+    </section>
+    <div class="container_realState"></div>
     <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
