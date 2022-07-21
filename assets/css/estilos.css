@@ -1,4 +1,4 @@
-*{
+ /* *{
     text-align: center;
 }
 
@@ -27,7 +27,7 @@ nav div{
 }
 
 
-/* Propiedades */
+
 
 .propiedades {
     padding: 0px 5%;
@@ -50,5 +50,5 @@ nav div{
 }
 
 .propiedad section p{
-    margin: 0px
-}
+    margin: 0px 
+}  */
