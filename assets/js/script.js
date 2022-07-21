@@ -47,6 +47,8 @@ const propiedadesJSON = [
 
 //variables
 let result = document.querySelector(".propiedades");
+let contador = document.querySelector(".contador")
+
 
 
 const template = (prop) => {
@@ -71,9 +73,11 @@ const cargaDatosPropiedades = () => {
   let cantidad = "";
   for (const propiedad of propiedadesJSON) {
     let html = template(propiedad);
+    cantidad ++
     result.innerHTML += html;
   }
   console.log(cantidad);
+  contador.innerHTML = cantidad
 };
 
 const buscarPropiedadPorMetroCuadrado = () => {
@@ -81,6 +85,7 @@ const buscarPropiedadPorMetroCuadrado = () => {
   let maxText = document.querySelector(".max").value;
   let rooms = document.querySelector(".rooms").value;
   let html = "";
+  cantidad = 0
 
   if(minText == 0 && maxText == 0 && rooms == 0) {
     alert("Debes ingresar todos los valores")
@@ -94,8 +99,10 @@ const buscarPropiedadPorMetroCuadrado = () => {
   result.innerHTML = "";
   for (const f of filtro) {
     html += template(f);
+    cantidad++
   }
   result.innerHTML = html;
+  contador.innerHTML = cantidad
 };
 
 document.addEventListener("DOMContentLoaded", cargaDatosPropiedades);
